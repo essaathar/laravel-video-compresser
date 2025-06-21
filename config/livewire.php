@@ -8,7 +8,7 @@ return [
     // ],
     'temporary_file_upload' => [
         'rules' => 'file|mimes:mp4,avi|max:102400', // 100MB
-        'directory' => 'tmp-videos',
+        'directory' => 'videos',
     ],
 
 ];
