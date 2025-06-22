@@ -29,8 +29,9 @@ class VideoUpload extends Component
 
     public function compress(): void
     {
+        $basePath = base_path() . '/';
         $path = storage_path() . "/app/private/videos/";
-
+        // dd(base_path());
         $videoPath = $path . 'my-video.mp4';
         if (!file_exists($videoPath)) {
             dd("File not found: $videoPath");
@@ -39,8 +40,10 @@ class VideoUpload extends Component
         $logger = Log::getLogger();
 
         $ffmpeg = FFMpeg::create(array(
-            'ffmpeg.binaries' => '/usr/bin/ffmpeg',
-            'ffprobe.binaries' => '/usr/bin/ffprobe',
+            // 'ffmpeg.binaries' => '/usr/bin/ffmpeg',
+            // 'ffprobe.binaries' => '/usr/bin/ffprobe',
+             'ffmpeg.binaries' => $basePath . 'ffmpeg',
+            'ffprobe.binaries' => $basePath . 'ffprobe',
             'temporary_directory' => $path
         ), $logger);
 
