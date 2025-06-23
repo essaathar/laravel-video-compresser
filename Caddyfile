@@ -3,7 +3,7 @@
 }
 
 # The domain name of your server
-:8000 {
+:8080 {
 	# Set the webroot to the public/ directory
 	root public/
 	# Enable compression (optional)
